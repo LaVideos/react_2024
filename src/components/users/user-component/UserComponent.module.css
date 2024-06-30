@@ -1,0 +1,20 @@
+.user_wrapper {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 8px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    flex: 1 1 calc(25% - 32px); /* Adjusting to have 4 items per row with 16px gap */
+    max-width: calc(15%);
+    box-sizing: border-box;
+}
+
+.user_info {
+    font-size: 1.2em;
+    margin-bottom: 4px;
+}
+
+.user_btn {
+    margin-top: 8px;
+}
