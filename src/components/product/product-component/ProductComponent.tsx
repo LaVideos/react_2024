@@ -1,25 +1,23 @@
 import React, {FC} from 'react';
-import {IProduct} from "../../../interfaces";
+import {IProduct} from "../../../types/interfaces";
 
 import styles from "../product-component/ProductComponent.module.css"
 
-interface IProps {
-    product: IProduct
+interface IProductComponent {
+    product:IProduct
 }
 
 
-const ProductComponent: FC<IProps> = ({product}) => {
 
+const ProductComponent:FC<IProductComponent> = ({product}) => {
     return (
-        <div className={[styles.productWrap].join(" ")}>
-            <div> {product.title}</div>
+        <div className={[styles.productWrapper].join("")}>
+            <div>{product.title}</div>
             <div>{product.category}</div>
-            <div>{product.description}</div>
             <div>{product.price}</div>
-            <div className={styles.imageWrap}>
-                <img className={styles.image} src={product.images[0]}/>
-            </div>
-        </div>);
+            <img className={styles.image} src={product.images[0]}  alt={""}/>
+        </div>
+    );
 };
 
 export default ProductComponent;

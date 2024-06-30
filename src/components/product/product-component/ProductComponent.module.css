@@ -1,0 +1,19 @@
+.productWrapper{
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 16px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    flex: 1 1 calc(25% - 32px);
+    max-width: calc(25% - 32px);
+    box-sizing: border-box;
+}
+
+
+.image{
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+    margin-bottom: 8px;
+}

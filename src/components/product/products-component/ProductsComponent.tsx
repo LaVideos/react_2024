@@ -1,22 +1,26 @@
 import React, {FC, useEffect, useState} from 'react';
 import ProductComponent from "../product-component/ProductComponent";
-import {IProduct} from "../../../interfaces";
+import {IProduct} from "../../../types/interfaces";
 
-const ProductsComponent:FC = () => {
+import styles from "../products-component/ProductsComponents.module.css"
 
-    const [products, setProducts] = useState<IProduct[]>([])
+const ProductsComponent = () => {
 
-   useEffect(()=>{
-       fetch('https://dummyjson.com/products')
-           .then(res => res.json()).then(res=>setProducts(res.products));
-   },[])
+    const [products, setProducts] = useState<IProduct[]>([]);
 
-console.log(products)
+
+    useEffect(()=>{
+        fetch('https://dummyjson.com/products').then(r=>r.json()).then(r=>setProducts(r.products));
+    },[])
+
 
 
     return (
-        <div>
-            {products.map(item => <ProductComponent key={item.id} product={item} />)}
+        <div className={[styles.wrapper].join("")}>
+
+            {
+                products&&products.map((value,index) => <ProductComponent product={value} key={index} />)
+            }
         </div>
     );
 };
