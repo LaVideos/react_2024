@@ -1,10 +1,13 @@
 import {useState} from "react";
 
-export const useToggle=<T>(initalState:boolean)=>{
+export const useToggle=<T> (intialState:boolean)=>{
 
-    const [toggle, setToggle] = useState<boolean>(initalState)
+
+    const [toggle, setToggle] = useState<boolean>(intialState)
+
     const handleToggle = ()=>setToggle(prevState => !prevState);
 
-    return{handleToggle,toggle}
+
+    return{toggle,handleToggle}
 
 }

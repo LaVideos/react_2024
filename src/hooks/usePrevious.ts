@@ -1,13 +1,14 @@
 import {useRef} from "react";
 
-export const usePrevious=<T>(item:number)=>{
+export const usePrevious =<T> (value:number)=>{
 
-    const current = useRef<number>(item);
+    const current = useRef<number>(value);
     const prev = useRef<number>();
 
-    if(current.current !==item){
-        prev.current = current.current
-        current.current = item
+    if(current.current !== value){
+        prev.current = current.current;
+        current.current = value;
+
     }
 
 
