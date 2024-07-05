@@ -7,17 +7,22 @@ function App() {
 
     const [counter, setCounter] = useState<number>(0)
 
+    const {toggle,handleToggle} = useToggle(false);
+
     const ref = usePrevious(counter);
 
     console.log(ref)
 
-  const {toggle,handleToggle} = useToggle(true);
   return (
    <>
-   <button onClick={()=>handleToggle()}>Press</button>
+   <button
+       onClick={
+       ()=>handleToggle()
+   }
+   >Press</button>
 
      {
-       !toggle&&<div>Black</div>
+       toggle&&<div>Black</div>
      }
 
      <hr/>
