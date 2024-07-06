@@ -1,13 +1,12 @@
-const BASE_URL = 'https://dummyjson.com';
+const BASE_URL = "https://dummyjson.com"
 
 const ENDPOINTS = {
-    USERS:"/users",
-    POSTS:"/posts"
+    POSTS:"/posts",
+    USERS:"/users"
 }
 
 
-
-
 export {
-    BASE_URL,ENDPOINTS
+    BASE_URL,
+    ENDPOINTS
 }

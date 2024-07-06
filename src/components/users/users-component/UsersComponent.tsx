@@ -1,35 +1,36 @@
 import React, {useEffect, useState} from 'react';
-import {USER_API} from "../../../services/axios.services";
-import {IUser} from "../../../types/user-interface";
-import UserComponent from "../user-component/UserComponent";
 
 
 import styles from "../users-component/UsersComponent.module.css"
+import {IUser} from "../../../types/user-interface";
+import {USER_API} from "../../../services/axios.services";
+import UserComponent from "../user-component/UserComponent";
 
 const UsersComponent = () => {
 
-    const [users, setUsers] = useState<IUser[]>([])
+    const [users, setUsers] = useState<IUser[]>([]);
 
-    const [posts, setPosts] = useState<any>(undefined);
+    const [posts, setPosts] = useState<string>('')
 
     useEffect(()=>{
-        USER_API.getAllUsers().then(({data})=>setUsers(data?.users));
+
+        USER_API.getALLUsers().then(({data})=>setUsers(data?.users));
+
     },[])
 
 
-    const getPosts=(id:number)=>{
-        USER_API.getAllUsersPost(id).then(({data})=>setPosts(data))
+
+    const getPosts = (id:number)=>{
+        USER_API.getUserPosts(id).then(({data})=>setPosts(JSON.stringify(data)))
     }
 
-
-    console.log(users)
 
     return (
         <div>
 
             <div className={styles.users_wrapper}>
                 {
-                    users && users.map((user) => <UserComponent getPosts={getPosts} user={user} key={user.id}/>)
+                    users.length&&users.map((user)=><UserComponent key={user.id} user={user} getPosts={getPosts}/>)
                 }
             </div>
             <hr/>
@@ -38,7 +39,9 @@ const UsersComponent = () => {
             <hr/>
 
             <div>
-                {posts&&JSON.stringify(posts)}
+                {
+                    posts
+                }
             </div>
         </div>
     );

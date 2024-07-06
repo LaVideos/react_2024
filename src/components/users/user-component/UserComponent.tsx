@@ -15,7 +15,7 @@ const UserComponent:FC<IProps> = ({user,getPosts}) => {
         <div className={styles.user_wrapper}>
             <div className={styles.user_info}>{user.id + ". "+ user.firstName + user.lastName}</div>
             <div className={styles.user_btn}>
-                <button onClick={()=>getPosts(user.id)}>Press me</button>
+                <button onClick={()=>getPosts(user.id)}>Press Me</button>
             </div>
         </div>
     );
