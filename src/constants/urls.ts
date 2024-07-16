@@ -4,10 +4,15 @@ const BASE_URL:string = "https://jsonplaceholder.typicode.com";
 
 
 const ENDPOINTS = {
-    USERS:"/users",
-    POSTS:"/posts",
-    TODOS:"/todos",
-    COMMENTS:"/comments"
+    USERS:"users",
+    USER:"user",
+    POSTS:"posts",
+    POST:"post",
+    TODOS:"todos",
+    TODO:"todo",
+    COMMENTS:"comments",
+    COMMENT:"comment",
+
 }
 
 export {BASE_URL,ENDPOINTS}
