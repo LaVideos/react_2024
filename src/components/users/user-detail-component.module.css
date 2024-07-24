@@ -1,0 +1,100 @@
+/* UserDetailComponent.module.css */
+
+.userDetailContainer {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    font-family: 'Arial', sans-serif;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.userHeader {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.userImage {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 20px;
+    border: 2px solid #ddd;
+}
+
+.userName {
+    font-size: 24px;
+    color: #333;
+    margin: 0;
+    font-weight: bold;
+}
+
+.userInfo {
+    margin-top: 10px;
+}
+
+.userInfo div {
+    margin-bottom: 5px;
+    font-size: 16px;
+    color: #555;
+}
+
+.cartButton {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    padding: 10px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    transition: color 0.3s;
+    font-size: 24px;
+    color: #007bff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cartButton img {
+    width: 24px;
+    height: 24px;
+    margin-right: 8px;
+}
+
+.cartButton:hover {
+    color: #0056b3;
+}
+
+.cartSection {
+    margin-top: auto;
+    padding: 15px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    border: 1px solid #eee;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+.cartSection h3 {
+    margin-top: 0;
+    color: #333;
+    font-size: 20px;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
