@@ -5,16 +5,15 @@ import {ITokenRefresh} from "../types";
 
 const axiosInstance = axios.create({baseURL:base_Url});
 
+axiosInstance.interceptors.request.use(requestObject => {
 
-axiosInstance.interceptors.request.use(requestObject=>{
+    if (localStorage.getItem(LOCAL_STORAGE_TOKEN) && requestObject.url !== `/${ENDPOINTS.AUTH}`) {
+        requestObject.headers.set('Authorization', 'Bearer ' + retriveLocalStorage<ITokenRefresh>(LOCAL_STORAGE_TOKEN).access);
 
-    if(localStorage.getItem(LOCAL_STORAGE_TOKEN) && requestObject.url !== `/${ENDPOINTS.AUTH}`){
-        requestObject.headers.set('Authorization','Bearer ', retriveLocalStorage<ITokenRefresh>(LOCAL_STORAGE_TOKEN).access);
     }
 
-    return requestObject
-});
-
+    return requestObject;
+})
 
 
 export {axiosInstance}

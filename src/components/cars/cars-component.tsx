@@ -11,10 +11,7 @@ const CarsComponent:FC<CarsProps> = ({cars}) => {
     return (
         <div>
             {
-                // cars.items.map(car=><CarComponent key={car.id} car={car}/>)
-
-                JSON.stringify(cars)
-
+                cars.items.map(car=><CarComponent key={car.id} car={car}/>)
             }
         </div>
     );

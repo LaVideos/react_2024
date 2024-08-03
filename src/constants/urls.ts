@@ -7,7 +7,7 @@ enum ENDPOINTS{
     REFRESH="refresh",
 }
 
-const LOCAL_STORAGE_TOKEN = "TOKEN"
+const LOCAL_STORAGE_TOKEN = "tokenPair"
 
 
 export {
